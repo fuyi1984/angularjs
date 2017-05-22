@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src=" https://code.angularjs.org/1.6.4/angular.js">
+
+    </script>
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-init="quantity=1;cost=5;price=5" ng-controller="myCtrl">
+        名:<input type="text" ng-model="firstName"><br> 姓:
+        <input type="text" ng-model="lastName"><br>
+        <br> 姓名:{{ firstName + " " + lastName }}
+        <h2>价格计算器</h2>
+        数量： <input type="number" ng-model="quantity">
+        价格： <input type="number" ng-model="price">
+        <p><b>总价：</b> {{ quantity * price }}</p>
+        <p>总价： {{ quantity * cost }}</p>
+        <p>总价： <span ng-bind="quantity * cost"></span></p>
+    </div>
+
+    <script>
+        var app=angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.firstName="John";
+            $scope.lastName="Doe";
+        });
+    </script>
+</body>
+</html>

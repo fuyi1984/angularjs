@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src=" https://code.angularjs.org/1.6.4/angular.js">
+
+    </script>
+</head>
+
+<body ng-app="myApp">
+
+    <runoob-directive></runoob-directive>
+
+    <div runoob-directive></div>
+
+    <div class="runoob-directive"></div>
+
+    <!-- directive: runoob-directive -->
+
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("runoobDirective", function() {
+            return {
+                restrict : "M",
+                replace  : true,
+                template : "<h1>自定义指令!</h1>"
+            };
+        });
+    </script>
+</body>
+
+</html>
